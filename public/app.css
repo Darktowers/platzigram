@@ -6426,11 +6426,12 @@ body {
   color: #125688;
   font-family: Montserrat; }
 
-#Main-container {
-  margin: 30px auto; }
-
 .iphone {
   max-width: 100%; }
+
+.header {
+  background: white;
+  box-shadow: none; }
 
 .signup-box,
 .signsignin-box {
@@ -6442,6 +6443,11 @@ body {
 .signup-box .platzigram {
   font-family: Oleo Script;
   font-size: 42px; }
+
+.platzigram {
+  font-family: Oleo Script;
+  font-size: 42px;
+  color: #125688 !important; }
 
 .signup-form {
   padding: 0 2em;
@@ -6470,3 +6476,6 @@ footer .btn.btn-idioma:hover, footer .btn-idioma.btn-large:hover {
 footer .platzigram {
   font-family: Oleo Script;
   font-size: 1em; }
+
+.timeline {
+  padding: 30px 0; }

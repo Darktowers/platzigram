@@ -2546,33 +2546,25 @@ page('/', function (ctx, next) {
 });
 
 },{"./template":18,"empty-element":4,"page":12,"title":14}],18:[function(require,module,exports){
-var yo = require('yo-yo');
-var landing = require('../landing');
-var home = yo`<div class="col s12 m7">
-                        <div class="row">
-                            <div class="signup-box">
-                                <h1 class="platzigram">Platzigram</h1>
-                                <h2>Welcome</>  
-                            </div>
-                        </div>
-                        <div class="row">
-                        <div class="signin-box">
-                            ¿ tienes una cuenta? <a href="/signin">Loguearse</a>
-                            </div>
-                            <div class="signin-box">
-                            ¿ No tienes una cuenta? <a href="/signup">Registrate</a>
-                            </div>
-                        </div>`;
-module.exports = landing(home);
+var yo = require("yo-yo");
+var layout = require("../layout");
+var template = yo`<div class="container timeline">
+        <div class="row">
+            <div class="col s12 m10 offset-m1 l6 offset-l3">
+                <p>Content</p>
+            </div>
+        </div>
+    </div>`;
+module.exports = layout(template);
 
-},{"../landing":20,"yo-yo":15}],19:[function(require,module,exports){
+},{"../layout":21,"yo-yo":15}],19:[function(require,module,exports){
 var page = require('page');
 require('./home');
 require('./signup');
 require('./signin');
 page();
 
-},{"./home":17,"./signin":21,"./signup":23,"page":12}],20:[function(require,module,exports){
+},{"./home":17,"./signin":22,"./signup":24,"page":12}],20:[function(require,module,exports){
 var yo = require('yo-yo');
 
 module.exports = function landing(box) {
@@ -2591,6 +2583,36 @@ module.exports = function landing(box) {
 };
 
 },{"yo-yo":15}],21:[function(require,module,exports){
+var yo = require('yo-yo');
+module.exports = function layout(content) {
+    return yo`<div>
+<nav class="header">
+    <div class="nav-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m6 offset-m1">
+                    <a href="" class="brand-logo platzigram">Platzigram</a>
+                </div>
+                    <div class="col s2  push-s10 push-m3">
+                        <a href="" class="btn btn-large btn-flat dropdown-button" data-activates="drop-user">
+                            <i class="fa fa-user"></i>
+                        </a>
+                        <ul id="drop-user" class="dropdown-content">
+                            <li><a href="">Salir</a></li>
+                        </ul>
+                    </div>
+                </div>
+        </div>
+    </div>
+</nav>
+<div class="content">
+${ content }
+</div>
+</div>
+`;
+};
+
+},{"yo-yo":15}],22:[function(require,module,exports){
 var page = require('page');
 var empty = require('empty-element');
 var template = require('./template');
@@ -2601,7 +2623,7 @@ page('/signin', function (ctx, next) {
                 empty(main).appendChild(template);
 });
 
-},{"./template":22,"empty-element":4,"page":12,"title":14}],22:[function(require,module,exports){
+},{"./template":23,"empty-element":4,"page":12,"title":14}],23:[function(require,module,exports){
 var yo = require('yo-yo');
 var landing = require('../landing');
 var signinForm = yo`<div class="col s12 m7">
@@ -2629,7 +2651,7 @@ var signinForm = yo`<div class="col s12 m7">
                         </div>`;
 module.exports = landing(signinForm);
 
-},{"../landing":20,"yo-yo":15}],23:[function(require,module,exports){
+},{"../landing":20,"yo-yo":15}],24:[function(require,module,exports){
 var page = require('page');
 var empty = require('empty-element');
 var template = require('./template');
@@ -2640,7 +2662,7 @@ page('/signup', function (ctx, next) {
         empty(main).appendChild(template);
 });
 
-},{"./template":24,"empty-element":4,"page":12,"title":14}],24:[function(require,module,exports){
+},{"./template":25,"empty-element":4,"page":12,"title":14}],25:[function(require,module,exports){
 var yo = require('yo-yo');
 var landing = require('../landing');
 var signupForm = yo`<div class="col s12 m7">
@@ -2650,7 +2672,7 @@ var signupForm = yo`<div class="col s12 m7">
                                 <form action="" class="signup-form">
                                     <h2>Registrate para ver fotos de tus amigos estudiando en Platzi</h2>
                                     <div class="section">
-                                        <a href="" class="btn btn-fb hide-on-small-only">Iniciar sesión con Facebook</a>
+                                        <a href="" class="btn btn-fb hide-on-small-only"><i class="fa fa-facebook"><i>Iniciar sesión con Facebook</a>
                                         <a href="" class="btn btn-fb hide-on-med-and-up">Iniciar sesión</a>                                
                                     </div>
                                     <div class="divider"></div>
