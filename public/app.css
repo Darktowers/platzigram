@@ -6479,3 +6479,33 @@ footer .platzigram {
 
 .timeline {
   padding: 30px 0; }
+
+.preimage {
+  max-width: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  max-height: 48px;
+  float: left;
+  margin-right: 12px; }
+
+.preimage img {
+  width: 100%; }
+
+.card small.time {
+  line-height: 48px; }
+
+.card p {
+  padding: 20px 0; }
+
+.card .likes {
+  line-height: 30px;
+  margin-left: 12px; }
+
+.card i {
+  font-size: 30px; }
+
+.card .fa-hearth-o {
+  color: #125688; }
+
+.card .username {
+  color: #125688; }
